@@ -8,6 +8,22 @@
   const yr = document.getElementById('yr');
   if (yr) yr.textContent = String(new Date().getFullYear());
 
+  /* ----- 1b. Always land on the hero, even if a stale #hash is in the URL ----- */
+  if (window.location.hash && performance.navigation?.type !== 1 /* not a reload */) {
+    // remove the hash without adding a history entry, then scroll to top
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
+  }
+
+  /* ----- 1c. Safety net: force nav__mobile hidden on desktop ----- */
+  const _navMobile = document.getElementById('navMobile');
+  function _syncMobileNav() {
+    if (!_navMobile) return;
+    if (window.innerWidth > 980) _navMobile.hidden = true;
+  }
+  _syncMobileNav();
+  window.addEventListener('resize', _syncMobileNav);
+
   /* ----- 2. Mobile nav toggle ----- */
   const burger = document.getElementById('navBurger');
   const navMobile = document.getElementById('navMobile');
