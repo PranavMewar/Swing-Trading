@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Electron Trading — a swing trading mentorship programme. Master the mind. Master the market. Built on psychology, sharpened by setups, expressed through flawless execution." />
+    <meta name="theme-color" content="#0a1226" />
+    <title>Electron Trading — Swing Trading Mentorship Programme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- ============================== NAV ============================== -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#top" class="brand" aria-label="Electron Trading home">
+          <span class="brand__logo" aria-hidden="true">
+            <svg viewBox="0 0 60 60" width="42" height="42">
+              <defs>
+                <radialGradient id="goldNuc" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#f4d68a"/>
+                  <stop offset="60%" stop-color="#d4a857"/>
+                  <stop offset="100%" stop-color="#b58843"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="30" cy="30" rx="24" ry="9" fill="none" stroke="#d4a857" stroke-width="0.9" opacity="0.85"/>
+              <ellipse cx="30" cy="30" rx="24" ry="9" fill="none" stroke="#d4a857" stroke-width="0.9" opacity="0.85" transform="rotate(60 30 30)"/>
+              <ellipse cx="30" cy="30" rx="24" ry="9" fill="none" stroke="#d4a857" stroke-width="0.9" opacity="0.85" transform="rotate(-60 30 30)"/>
+              <circle cx="30" cy="30" r="6.4" fill="url(#goldNuc)"/>
+              <text x="30" y="33.6" text-anchor="middle" fill="#0a1226" font-family="Cormorant Garamond" font-weight="700" font-size="10">E</text>
+              <circle cx="54" cy="30" r="1.6" fill="#d4a857"/>
+              <circle cx="42" cy="48" r="1.6" fill="#d4a857"/>
+              <circle cx="18" cy="48" r="1.6" fill="#d4a857"/>
+            </svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">ELECTRON</span>
+            <span class="brand__sub">Trading</span>
+          </span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#philosophy">Philosophy</a>
+          <a href="#programme">Programme</a>
+          <a href="#trajectory">Trajectory</a>
+          <a href="#tools">Tools</a>
+          <a href="#tiers">Tiers</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a href="#inquire" class="btn btn--gold nav__cta">Inquire through DM <span aria-hidden="true">→</span></a>
+
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav__mobile" id="navMobile" hidden>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#programme">Programme</a>
+        <a href="#trajectory">Trajectory</a>
+        <a href="#tools">Tools</a>
+        <a href="#tiers">Tiers</a>
+        <a href="#faq">FAQ</a>
+        <a href="#inquire" class="btn btn--gold">Inquire through DM →</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ============================== HERO ============================== -->
+      <section class="hero">
+        <canvas id="heroChart" class="hero__chart" aria-hidden="true"></canvas>
+        <div class="hero__atom" aria-hidden="true">
+          <svg viewBox="0 0 600 600" width="100%" height="100%">
+            <g fill="none" stroke="#d4a857" stroke-width="1" opacity="0.55">
+              <ellipse cx="300" cy="300" rx="240" ry="90"/>
+              <ellipse cx="300" cy="300" rx="240" ry="90" transform="rotate(60 300 300)"/>
+              <ellipse cx="300" cy="300" rx="240" ry="90" transform="rotate(-60 300 300)"/>
+              <ellipse cx="300" cy="300" rx="240" ry="90" transform="rotate(30 300 300)" opacity="0.35"/>
+              <ellipse cx="300" cy="300" rx="240" ry="90" transform="rotate(-30 300 300)" opacity="0.35"/>
+            </g>
+            <circle cx="300" cy="300" r="42" fill="#d4a857" opacity="0.95"/>
+            <text x="300" y="320" text-anchor="middle" fill="#0a1226" font-family="Cormorant Garamond" font-weight="700" font-size="56">E</text>
+            <g fill="#d4a857">
+              <circle class="orb orb--a" cx="540" cy="300" r="5"/>
+              <circle class="orb orb--b" cx="420" cy="510" r="5"/>
+              <circle class="orb orb--c" cx="180" cy="510" r="5"/>
+              <circle class="orb orb--d" cx="60"  cy="300" r="5"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="container hero__inner">
+          <p class="hero__eyebrow">SWING TRADING <span class="dot">·</span> MENTORSHIP PROGRAMME</p>
+          <h1 class="hero__title">
+            Master the mind.<br>
+            <em>Master the market.</em>
+          </h1>
+          <p class="hero__sub">
+            A mentorship for traders who are done guessing — built on
+            psychology, sharpened by setups, expressed through flawless
+            execution.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#inquire" class="btn btn--gold btn--lg">
+              Inquire through DM
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#philosophy" class="btn btn--ghost btn--lg">Read the philosophy</a>
+          </div>
+
+          <p class="hero__foot">Programme Guide · 2026</p>
+        </div>
+      </section>
+
+      <!-- ============================== PHILOSOPHY ============================== -->
+      <section id="philosophy" class="section">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow"><span class="dash"></span> The framework</p>
+            <h2>The right mindset<br><em>produces the right trader.</em></h2>
+            <p class="section__lede">
+              Markets do not reward the smartest. They reward the most
+              disciplined. Every trader we mentor is built in the same order
+              — psychology first, setups next, execution last. Skip a step,
+              and the next one collapses.
+            </p>
+          </header>
+
+          <ol class="pillars">
+            <li class="pillar">
+              <span class="pillar__roman">i</span>
+              <p class="pillar__step">01 — PSYCHOLOGY</p>
+              <h3 class="pillar__title">The foundation.</h3>
+              <p class="pillar__body">
+                Rewire fear, FOMO, and impulse before they ever cost you a
+                rupee. Build the temperament that survives bull runs, bear
+                traps, and every market in between. Without this, no setup
+                will save you.
+              </p>
+            </li>
+            <li class="pillar">
+              <span class="pillar__roman">ii</span>
+              <p class="pillar__step">02 — SETUPS</p>
+              <h3 class="pillar__title">The framework.</h3>
+              <p class="pillar__body">
+                Learn the high-revenue swing patterns that repeat across
+                cycles, sectors, and stocks. A weekly watchlist co-built live
+                on Google Meet — so you see how a professional thinks, not
+                just what they pick.
+              </p>
+            </li>
+            <li class="pillar">
+              <span class="pillar__roman">iii</span>
+              <p class="pillar__step">03 — EXECUTION</p>
+              <h3 class="pillar__title">Flawless, with confidence.</h3>
+              <p class="pillar__body">
+                Pull the trigger without hesitation, sized correctly, and
+                exit with conviction — not emotion. Daily trade reviews
+                close the feedback loop, so every trade either earns you
+                money or earns you a lesson.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================== PROGRAMME (Deliverables) ============================== -->
+      <section id="programme" class="section section--alt">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow"><span class="dash"></span> The programme</p>
+            <h2>Everything you receive,<br><em>across every tier.</em></h2>
+          </header>
+
+          <ul class="deliverables">
+            <li class="deliv">
+              <span class="deliv__bullet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="#d4a857" stroke-width="1.5"/><path d="M12 2 V12 H22" fill="none" stroke="#d4a857" stroke-width="1.5"/></svg>
+              </span>
+              <div>
+                <h3>Psychology Rewiring <em>— the core</em></h3>
+                <p>A structured curriculum that retrains how you think before, during, and after a trade. The single biggest variable separating profitable and losing traders.</p>
+              </div>
+            </li>
+            <li class="deliv">
+              <span class="deliv__bullet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="#d4a857" stroke-width="1.5"/><path d="M12 2 V12 H22" fill="none" stroke="#d4a857" stroke-width="1.5"/></svg>
+              </span>
+              <div>
+                <h3>High-Revenue Setups <em>— pattern library</em></h3>
+                <p>A working library of the swing setups that consistently produce — taught with entries, stops, targets, and the conditions in which each one works (and fails).</p>
+              </div>
+            </li>
+            <li class="deliv">
+              <span class="deliv__bullet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="#d4a857" stroke-width="1.5"/><path d="M12 2 V12 H22" fill="none" stroke="#d4a857" stroke-width="1.5"/></svg>
+              </span>
+              <div>
+                <h3>Weekly Watchlist on Google Meet <em>— live, with members</em></h3>
+                <p>Built live with the cohort every week. You see the screening, the rejection logic, and the final shortlist take shape in real time.</p>
+              </div>
+            </li>
+            <li class="deliv">
+              <span class="deliv__bullet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="#d4a857" stroke-width="1.5"/><path d="M12 2 V12 H22" fill="none" stroke="#d4a857" stroke-width="1.5"/></svg>
+              </span>
+              <div>
+                <h3>Bi-Weekly Q&amp;A Sessions <em>— direct access</em></h3>
+                <p>Bring your charts, your trades, your blind spots. Two open sessions a month for deep dialogue and tactical answers.</p>
+              </div>
+            </li>
+            <li class="deliv">
+              <span class="deliv__bullet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="#d4a857" stroke-width="1.5"/><path d="M12 2 V12 H22" fill="none" stroke="#d4a857" stroke-width="1.5"/></svg>
+              </span>
+              <div>
+                <h3>Daily Market Report <em>— Telegram broadcast</em></h3>
+                <p>A concise read on market posture every trading day, broadcast straight to your Telegram. Context before the bell rings.</p>
+              </div>
+            </li>
+            <li class="deliv">
+              <span class="deliv__bullet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="#d4a857" stroke-width="1.5"/><path d="M12 2 V12 H22" fill="none" stroke="#d4a857" stroke-width="1.5"/></svg>
+              </span>
+              <div>
+                <h3>Daily Trade Reports &amp; Feedback <em>— the feedback loop</em></h3>
+                <p>Submit your trade reports daily and receive specific feedback on what was right, what was wrong, and what to repeat or rebuild. This is where compounding actually starts.</p>
+              </div>
+            </li>
+          </ul>
+
+          <p class="programme__foot"><em>A complete loop — learn, execute, review, refine.</em></p>
+        </div>
+      </section>
+
+      <!-- ============================== TRAJECTORY ============================== -->
+      <section id="trajectory" class="section">
+        <div class="container">
+          <header class="section__head section__head--left">
+            <p class="eyebrow"><span class="dash"></span> Programme trajectory</p>
+            <h2>A deliberate sequence —<br><em>not a scattered curriculum.</em></h2>
+            <p class="section__lede">
+              The first three months focus only and only on psychology, risk
+              management, and position sizing. No shortcuts. The following
+              months scale according to the demand of the market — building
+              setups, sharpening execution, and tightening the feedback loop.
+            </p>
+          </header>
+
+          <div class="trajectory">
+            <div class="trajectory__line" aria-hidden="true"></div>
+
+            <article class="traj-step">
+              <span class="traj-step__num">M 01 – 03</span>
+              <h3>Foundations</h3>
+              <p>Psychology rewiring. Risk management. Position sizing. The non-negotiable groundwork that decides whether everything above it stands or falls.</p>
+            </article>
+
+            <article class="traj-step">
+              <span class="traj-step__num">M 04 – 06</span>
+              <h3>Pattern fluency</h3>
+              <p>The high-revenue setup library, taught with conditions of strength and conditions of failure. Weekly watchlists built live with the cohort.</p>
+            </article>
+
+            <article class="traj-step">
+              <span class="traj-step__num">M 07 – 09</span>
+              <h3>Live execution</h3>
+              <p>Daily trade reports, daily feedback. Bi-weekly Q&amp;A. Sizing and sequencing tightened against real, dated outcomes — yours.</p>
+            </article>
+
+            <article class="traj-step">
+              <span class="traj-step__num">M 10 – 12</span>
+              <h3>Personal playbook</h3>
+              <p>A written, audited record of <em>your</em> edge — the setups, conditions, sizing, and review protocol you'll carry beyond the programme.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== INTERACTIVE TOOLS ============================== -->
+      <section id="tools" class="section section--alt">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow"><span class="dash"></span> Try the toolkit</p>
+            <h2>The discipline,<br><em>made tangible.</em></h2>
+            <p class="section__lede">
+              Two of the tools you'll live inside during the programme — risk
+              sizing and setup recognition — running live in your browser. No
+              signup.
+            </p>
+          </header>
+
+          <div class="tools">
+            <!-- Position sizer -->
+            <div class="tool-card">
+              <p class="tool-card__step">i — Position Sizer &amp; R-Multiple</p>
+              <h3 class="tool-card__title">Risk fixed. Always.</h3>
+              <p class="tool-card__sub">Plug in a trade. Get a position size, capital deployed, risk amount, and reward-to-risk in real time.</p>
+
+              <form id="riskForm" class="form-grid" autocomplete="off">
+                <label>Account size (₹)
+                  <input type="number" id="acct" value="500000" min="1" />
+                </label>
+                <label>Risk per trade (%)
+                  <input type="number" id="riskPct" value="0.75" step="0.05" min="0.05" max="5" />
+                </label>
+                <label>Entry price (₹)
+                  <input type="number" id="entry" value="2841" step="0.05" min="0.05" />
+                </label>
+                <label>Stop loss (₹)
+                  <input type="number" id="stop" value="2772" step="0.05" min="0.05" />
+                </label>
+                <label>Target price (₹)
+                  <input type="number" id="target" value="3310" step="0.05" min="0.05" />
+                </label>
+                <label>Side
+                  <select id="side">
+                    <option value="long" selected>Long</option>
+                    <option value="short">Short</option>
+                  </select>
+                </label>
+              </form>
+
+              <div class="tool-card__out">
+                <div class="kpi"><span>Risk / share</span><b id="kRisk">—</b></div>
+                <div class="kpi"><span>Position size</span><b id="kSize">—</b></div>
+                <div class="kpi"><span>Capital deployed</span><b id="kCap">—</b></div>
+                <div class="kpi"><span>Risk amount</span><b id="kAmt">—</b></div>
+                <div class="kpi kpi--accent"><span>Reward : Risk</span><b id="kRR">—</b></div>
+                <div class="kpi kpi--accent"><span>Potential gain</span><b id="kGain">—</b></div>
+              </div>
+
+              <p class="tool-card__hint" id="rrHint"><em>Aim for 2R or better. Below that, your win-rate has to do all the work.</em></p>
+            </div>
+
+            <!-- Setup spotter -->
+            <div class="tool-card">
+              <p class="tool-card__step">ii — Setup Spotter</p>
+              <h3 class="tool-card__title">The four shapes that pay.</h3>
+              <p class="tool-card__sub">Cycle through the high-revenue swing setups. Each chart is drawn live.</p>
+
+              <div class="setup-tabs" role="tablist">
+                <button class="setup-tab is-active" data-setup="flag" role="tab">Continuation flag</button>
+                <button class="setup-tab" data-setup="base" role="tab">VCP base</button>
+                <button class="setup-tab" data-setup="reversal" role="tab">Reversal pivot</button>
+                <button class="setup-tab" data-setup="earnings" role="tab">Post-earnings drift</button>
+              </div>
+
+              <canvas id="setupChart" class="setup-chart" width="640" height="280" aria-label="Setup chart"></canvas>
+
+              <div class="setup-meta">
+                <div><span>Trigger</span><b id="setupTrigger">—</b></div>
+                <div><span>Invalidation</span><b id="setupInval">—</b></div>
+                <div><span>Avg hold</span><b id="setupHold">—</b></div>
+                <div><span>Conditions work</span><b id="setupWR">—</b></div>
+              </div>
+              <p class="footnote">Illustrative pattern geometry. Setups must be confirmed against the broader market context taught inside the programme.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== TIERS ============================== -->
+      <section id="tiers" class="section">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow"><span class="dash"></span> Programme tiers</p>
+            <h2>Choose your <em>commitment.</em></h2>
+            <p class="section__lede">
+              Same curriculum. Same discipline. Different lengths of arc.
+              Every tier includes the full set of deliverables above.
+            </p>
+          </header>
+
+          <div class="tiers">
+            <article class="tier">
+              <p class="tier__roman">TIER I</p>
+              <h3 class="tier__name">Foundations</h3>
+              <div class="tier__price">
+                <span class="rupee">₹</span><span class="amt">7,999</span>
+              </div>
+              <p class="tier__dur">3 MONTHS</p>
+              <div class="tier__rule" aria-hidden="true"></div>
+              <p class="tier__body">
+                A complete reset. Three months focused on psychology, risk
+                management, and position sizing — the foundation everything
+                else is built on.
+              </p>
+              <a href="#inquire" class="btn btn--ghost btn--block">Inquire about Tier I</a>
+            </article>
+
+            <article class="tier tier--featured">
+              <span class="tier__flag">MOST CHOSEN</span>
+              <p class="tier__roman">TIER II</p>
+              <h3 class="tier__name">Practitioner</h3>
+              <div class="tier__price">
+                <span class="rupee">₹</span><span class="amt">14,999</span>
+              </div>
+              <p class="tier__dur">6 MONTHS</p>
+              <div class="tier__rule" aria-hidden="true"></div>
+              <p class="tier__body">
+                Foundations carried into live setups. The cohort moves from
+                rewiring the mind into deploying high-revenue swing patterns
+                with discipline.
+              </p>
+              <a href="#inquire" class="btn btn--gold btn--block">Inquire about Tier II</a>
+            </article>
+
+            <article class="tier">
+              <p class="tier__roman">TIER III</p>
+              <h3 class="tier__name">Mastery</h3>
+              <div class="tier__price">
+                <span class="rupee">₹</span><span class="amt">21,999</span>
+              </div>
+              <p class="tier__dur">12 MONTHS</p>
+              <div class="tier__rule" aria-hidden="true"></div>
+              <p class="tier__body">
+                The complete arc. A full year of mentorship, scaling with the
+                market — from temperament to setups to flawless, confident
+                execution.
+              </p>
+              <a href="#inquire" class="btn btn--ghost btn--block">Inquire about Tier III</a>
+            </article>
+          </div>
+
+          <p class="tiers__note">
+            Electron Trading is an educational mentorship programme. Not a
+            SEBI-registered investment advisory. No buy or sell calls are given.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================== TESTIMONIALS ============================== -->
+      <section class="section section--alt">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow"><span class="dash"></span> Voices from the cohort</p>
+            <h2>What graduates<br><em>actually walked away with.</em></h2>
+          </header>
+
+          <div class="testimonials">
+            <article class="testi">
+              <p class="testi__quote">"I'd been break-even for three years. The psychology rewiring module alone showed me I was hiding two losing setups inside one playbook. Cut them — and my equity curve finally started to slope up."</p>
+              <footer><b>Ankit S.</b><span>Bengaluru · Practitioner</span></footer>
+            </article>
+            <article class="testi">
+              <p class="testi__quote">"The daily trade reports were the unlock. Knowing someone would read my decisions made me size right, set the stop, and stop revenge-trading. I'm a different operator now."</p>
+              <footer><b>Megha R.</b><span>Pune · Mastery</span></footer>
+            </article>
+            <article class="testi">
+              <p class="testi__quote">"The weekly Google Meet watchlist is the part nobody else does. Seeing the rejection logic — why a stock is <em>not</em> chosen — is worth the tier fee by itself."</p>
+              <footer><b>Rahul D.</b><span>Mumbai · Foundations</span></footer>
+            </article>
+            <article class="testi">
+              <p class="testi__quote">"I'm a doctor, not a chart guy. The setup library is small enough that I can run it in 30 minutes after clinic. Up 22% YTD on a real account, not a paper one."</p>
+              <footer><b>Dr. Kavya N.</b><span>Hyderabad · Practitioner</span></footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== FAQ ============================== -->
+      <section id="faq" class="section">
+        <div class="container faq-wrap">
+          <header class="section__head section__head--left">
+            <p class="eyebrow"><span class="dash"></span> FAQ</p>
+            <h2>Questions, <em>answered.</em></h2>
+          </header>
+
+          <ul class="faq">
+            <li class="faq__item">
+              <button class="faq__q">Do I need prior trading experience? <span>+</span></button>
+              <div class="faq__a"><p>No. The first three months are designed to take a complete beginner from zero to a properly built foundation. The programme works just as well for traders who have been struggling to find consistency and need to rebuild.</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__q">How much capital do I need to start? <span>+</span></button>
+              <div class="faq__a"><p>The risk framework scales — the rules are the same at ₹50,000 or ₹50 lakh. Most members start live with ₹50,000–₹2,00,000 once the foundation is in place. The first three months can be run on paper.</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__q">How much time per week does the programme need? <span>+</span></button>
+              <div class="faq__a"><p>Budget 4–6 hours per week. The weekly Google Meet watchlist, two Q&amp;A sessions per month, daily market reports, and your own daily trade report. It is part-time, but it is deliberate.</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__q">Do you give buy or sell calls? <span>+</span></button>
+              <div class="faq__a"><p>No. Electron Trading is an educational mentorship — not a SEBI-registered advisory. The Daily Market Report describes posture and context; it does not recommend trades. You execute your own decisions.</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__q">What's the difference between the tiers? <span>+</span></button>
+              <div class="faq__a"><p>The deliverables are the same across every tier — every member gets psychology rewiring, the setup library, the weekly watchlist, bi-weekly Q&amp;A, the daily market report, and the daily trade feedback loop. The tiers differ in duration: 3, 6, or 12 months.</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__q">How do I join? <span>+</span></button>
+              <div class="faq__a"><p>Inquire through DM. We have a short conversation to make sure the fit is right — for you and for the cohort — and then send the onboarding pack.</p></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================== INQUIRE ============================== -->
+      <section id="inquire" class="section">
+        <div class="container">
+          <div class="cta">
+            <div class="cta__decor" aria-hidden="true"></div>
+            <p class="eyebrow eyebrow--center"><span class="dash"></span> Ready to trade like a professional?</p>
+            <h2 class="cta__title">Inquire about the<br><em>next cohort.</em></h2>
+            <p class="cta__sub">Leave your details — we'll start the conversation over DM with the programme brochure and the next available start date.</p>
+
+            <form id="applyForm" class="apply-form" novalidate>
+              <div class="apply-form__row">
+                <label>Full name
+                  <input type="text" id="aName" required placeholder="Your name" />
+                </label>
+                <label>Email
+                  <input type="email" id="aEmail" required placeholder="you@example.com" />
+                </label>
+              </div>
+              <div class="apply-form__row">
+                <label>Trading experience
+                  <select id="aExp">
+                    <option value="0">Just starting</option>
+                    <option value="1">Less than 1 year</option>
+                    <option value="2" selected>1–3 years</option>
+                    <option value="3">3+ years, looking to refine</option>
+                  </select>
+                </label>
+                <label>Preferred tier
+                  <select id="aTier">
+                    <option>Tier I — Foundations</option>
+                    <option selected>Tier II — Practitioner</option>
+                    <option>Tier III — Mastery</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+              </div>
+              <label class="check">
+                <input type="checkbox" id="aAgree" required />
+                <span>I understand Electron Trading is an educational programme, not a SEBI-registered advisory.</span>
+              </label>
+              <button type="submit" class="btn btn--gold btn--lg btn--block">
+                Inquire through DM
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+              <p class="apply-form__ok" id="applyOk" hidden>Received. We'll reach out within 24 hours.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================== FOOTER ============================== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="brand">
+            <span class="brand__logo">
+              <svg viewBox="0 0 60 60" width="36" height="36">
+                <ellipse cx="30" cy="30" rx="22" ry="8" fill="none" stroke="#d4a857" stroke-width="0.9"/>
+                <ellipse cx="30" cy="30" rx="22" ry="8" fill="none" stroke="#d4a857" stroke-width="0.9" transform="rotate(60 30 30)"/>
+                <ellipse cx="30" cy="30" rx="22" ry="8" fill="none" stroke="#d4a857" stroke-width="0.9" transform="rotate(-60 30 30)"/>
+                <circle cx="30" cy="30" r="5.5" fill="#d4a857"/>
+                <text x="30" y="33" text-anchor="middle" fill="#0a1226" font-family="Cormorant Garamond" font-weight="700" font-size="9">E</text>
+              </svg>
+            </span>
+            <span class="brand__text">
+              <span class="brand__name">ELECTRON</span>
+              <span class="brand__sub">Trading</span>
+            </span>
+          </span>
+          <p class="footer__tag"><em>Master the mind. Master the market.</em></p>
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h4>Programme</h4>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#programme">What's included</a>
+            <a href="#trajectory">Trajectory</a>
+            <a href="#tiers">Tiers</a>
+          </div>
+          <div>
+            <h4>Tools</h4>
+            <a href="#tools">Position sizer</a>
+            <a href="#tools">Setup spotter</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="#inquire">Inquire through DM</a>
+            <a href="#">Telegram channel</a>
+            <a href="#">Programme guide PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer__base">
+        <span>© <span id="yr"></span> Electron Trading. Programme Guide · 2026.</span>
+        <span class="muted">Educational programme. Not a SEBI-registered investment advisory. Trading involves risk of capital loss.</span>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
